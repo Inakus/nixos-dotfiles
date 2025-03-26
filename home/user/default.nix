@@ -1,7 +1,6 @@
 {
 
  imports = [
-   ./git.nix
    ./gtk.nix
    ./shell.nix
    ./config.nix

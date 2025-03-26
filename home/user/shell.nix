@@ -2,7 +2,7 @@
 let 
   myAliases = {
     cat = "bat";
-    ls = "'eza --icons=always --color=always -a --git --no-filesize --no-time --no-user --no-permissions";
+    ls = "eza --icons=always --color=always -a --git --no-filesize --no-time --no-user --no-permissions";
 
     fullClean = '' 
         nix-collect-garbage --delete-old
