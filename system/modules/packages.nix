@@ -8,6 +8,7 @@
     eza
     fzf
     git
+    gh
     gnumake
     lm_sensors
     libsForQt5.qt5.qtquickcontrols2
