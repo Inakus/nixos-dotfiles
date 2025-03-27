@@ -51,6 +51,7 @@
 
     # native wayland support (unstable)
     wineWowPackages.waylandFull
+    lxappearance
   ];
 }
 

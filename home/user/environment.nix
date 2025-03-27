@@ -25,6 +25,7 @@
 	     XDG_CACHE_HOME = "\${HOME}/.cache";
 	     XDG_CONFIG_HOME = "\${HOME}/.config";
 	     XDG_DATA_HOME = "\${HOME}/.local/share";
+         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
 
   };
 }

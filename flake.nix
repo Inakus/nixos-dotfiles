@@ -3,10 +3,11 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-24.11";
+        nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager/release-24.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
-        hyprland.url = "github:hyprwm/Hyprland";
+        #hyprland.url = "github:hyprwm/Hyprland";
         nixvim = {
             url = "github:nix-community/nixvim/nixos-24.11";
             # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
@@ -14,11 +15,12 @@
         };
     };
 
-    outputs = {self, nixpkgs, home-manager, zen-browser, ...} @ inputs :
+    outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, ...} @ inputs :
     let
         lib = nixpkgs.lib;
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
+        pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in{
         nixosConfigurations = {
             nixos = lib.nixosSystem {
@@ -41,7 +43,7 @@
                 modules = [
                     ./home
                 ];
-                extraSpecialArgs = { inherit inputs; system = "x86_64-linux";};
+                extraSpecialArgs = { inherit inputs; inherit pkgs-unstable; system = "x86_64-linux";};
 
             };
         };
