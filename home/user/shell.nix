@@ -63,8 +63,6 @@ ZSH_DISABLE_COMPFIX=true
 
     bindkey -e
 
-    [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
-
     # disable sort when completing `git checkout`
     zstyle ':completion:*:git-checkout:*' sort false
 
